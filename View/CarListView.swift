@@ -1,9 +1,3 @@
-//
-//  CarListView.swift
-//  rv2
-//
-//  Created by Nishant Mehta on 12/12/24.
-//
 
 import SwiftUI
 
@@ -15,7 +9,8 @@ struct CarListView: View {
         NavigationView {
             List(viewModel.cars) { car in
                 HStack {
-                    AsyncImage(url: URL(string: "https://ridevilla.in/uploads/carimages/\(car.carimage)")) { image in
+                    
+                    AsyncImage(url: URL(string: "https://ridevilla.in/uploads/carimages/\(car.carimage ?? "T")")) { image in
                         image
                             .resizable()
                             .scaledToFit()
@@ -26,30 +21,29 @@ struct CarListView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text(car.car_name)
+                        
+                        Text(car.car_name ?? "Unknown car")
                             .font(.headline)
-                        Text("Seats: \(car.seats)")
+                        Text("Seats: \(car.seats ?? "2")" )
                             .font(.subheadline)
-                        Text("₹\(car.priceperday)/day")
+                        Text("₹\(car.priceperday ?? "2300")/day")
                             .font(.subheadline)
                             .foregroundColor(.green)
                     }
                 }
                 .padding()
+                
             }
             .navigationTitle("Available Cars")
             .onAppear {
                 viewModel.fetchCars()
+                print(viewModel.cars) 
                 
             }
         }
     }
 }
-struct CarListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CarListView()
-    }
+
+#Preview {
+    CarListView()
 }
-//#Preview {
-//    CarListView()
-//}
