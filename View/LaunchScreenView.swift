@@ -1,9 +1,3 @@
-//
-//  LaunchScreenView.swift
-//  rv2
-//
-//  Created by Nishant Mehta on 06/10/24.
-//
 
 import SwiftUI
 

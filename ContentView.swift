@@ -7,19 +7,19 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ContentView: View {
+    @StateObject var viewModel = OnboardingViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Text("Hello, world!")
+        if viewModel.hasSeenOnboarding {
+            HomeView()  // Your main app view
+        } else {
+            OnboardingView(viewModel: viewModel)
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }

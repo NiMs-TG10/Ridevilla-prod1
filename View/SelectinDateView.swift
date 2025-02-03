@@ -304,13 +304,13 @@ struct VehicleBookingView: View {
                 TabView {
                     
                     Tab("Received", systemImage: "house") {
-                        NavigationLink("go", destination:MapView())	
+//                        NavigationLink("go", destination:MapView())	
                     }
                     .badge(2)
 
 
                     Tab("Sent", systemImage: "tray.and.arrow.up.fill") {
-                        MapView()
+//                        MapView()
                     }
                     .badge(3)
 
