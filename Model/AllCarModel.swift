@@ -1,9 +1,3 @@
-//
-//  AllCarModel.swift
-//  rv2
-//
-//  Created by Nishant Mehta on 12/12/24.
-//
 
 import Foundation
 
